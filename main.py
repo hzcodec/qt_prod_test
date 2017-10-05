@@ -24,9 +24,18 @@ class ProdTestMonitor(QtGui.QMainWindow):
 
     def initUI(self):
 
-        lbl = QtGui.QLabel(self)
-        lbl.move(200, 10)
-        lbl.setText('Jennie')
+        # bold fonts
+        myFont = QtGui.QFont('Times')
+        myFont.setBold(True)
+
+        comPortLbl = QtGui.QLabel(self)
+        comPortLbl.move(200, 10)
+        comPortLbl.setText('COM port:')
+        comPortLbl.setFont(myFont)
+
+        comPortTxt = QtGui.QLabel(self)
+        comPortTxt.move(280, 10)
+        comPortTxt.setText('ttyACM0')
 
         # create quit button
         quitBtn = QtGui.QPushButton('Quit', self)
