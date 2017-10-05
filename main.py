@@ -9,7 +9,7 @@ class ProdTestMonitor(QtGui.QMainWindow):
     def __init__(self):
         super(ProdTestMonitor, self).__init__()
 
-        self.setGeometry(2030, 30, 500, 200)
+        self.setGeometry(2030, 30, 500, 300)
         self.setWindowTitle('ActSafe Production Test')
 
         extractAction = QtGui.QAction('&Quit', self)
@@ -31,12 +31,20 @@ class ProdTestMonitor(QtGui.QMainWindow):
 
         comPortLbl = QtGui.QLabel(self)
         comPortLbl.move(200, Y_POS)
-        comPortLbl.setText('COM port:')
-        comPortLbl.setFont(myFont)
+        comPortLbl.setText('COM port is just to long:')
+        #comPortLbl.setFont(myFont)
 
-        comPortTxt = QtGui.QLabel(self)
-        comPortTxt.move(280, Y_POS)
-        comPortTxt.setText('ttyACM0')
+        #comPortNameLbl = QtGui.QLabel(self)
+        #comPortNameLbl.move(280, Y_POS)
+        #comPortNameLbl.setText('ttyACM0')
+
+        #ascenderVersionLbl = QtGui.QLabel(self)
+        #ascenderVersionLbl.move(30, Y_POS+60)
+        #ascenderVersionLbl.setText('Ascender Version:')
+
+        #remoteVersionLbl = QtGui.QLabel(self)
+        #remoteVersionLbl.move(30, Y_POS+90)
+        #remoteVersionLbl.setText('Ascender Version:')
 
         # create quit button
         quitBtn = QtGui.QPushButton('Quit', self)
