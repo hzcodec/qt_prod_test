@@ -11,9 +11,8 @@ class ProdTestMonitor(QtGui.QMainWindow):
         self.setGeometry(2030, 30, 500, 200)
         self.setWindowTitle('ActSafe Production Test')
 
-        extractAction = QtGui.QAction('&Get here', self)
+        extractAction = QtGui.QAction('&Quit', self)
         extractAction.setShortcut('Ctrl+Q')
-        extractAction.setStatusTip('Leave the application')
         extractAction.triggered.connect(self.close_application)
         self.statusBar()
 
@@ -38,8 +37,7 @@ class ProdTestMonitor(QtGui.QMainWindow):
 
 
     def close_application(self):
-        print('Hello')
-        choice = QtGui.QMessageBox.question(self, 'Tired? Want to go home?', 'Do you want to quit?',
+        choice = QtGui.QMessageBox.question(self, 'Tired?', 'Do you want to quit?',
                                             QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
 
         if choice == QtGui.QMessageBox.Yes:
