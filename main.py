@@ -25,17 +25,17 @@ class ProdTestMonitor(QtGui.QMainWindow):
 
     def initUI(self):
 
+        lbl = QtGui.QLabel(self)
+        lbl.move(200, 10)
+        lbl.setText('Jennie')
+
         # create quit button
         quitBtn = QtGui.QPushButton('Quit', self)
         quitBtn.clicked.connect(QtCore.QCoreApplication.instance().quit)
 
-        quitBtn.move(50, 50)
+        quitBtn.move(5, 5)
         quitBtn.resize(50,40)
 
-        w = QtGui.QWidget()
-        b = QtGui.QLabel(w)
-        b.setText('Jennie')
-        b.move(100,90)
 
     def close_application(self):
         print('Hello')
