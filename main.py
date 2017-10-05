@@ -1,6 +1,7 @@
 import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
+from common import Y_POS
 
 #class ProdTestMonitor(QtGui.QWidget):
 class ProdTestMonitor(QtGui.QMainWindow):
@@ -29,19 +30,19 @@ class ProdTestMonitor(QtGui.QMainWindow):
         myFont.setBold(True)
 
         comPortLbl = QtGui.QLabel(self)
-        comPortLbl.move(200, 10)
+        comPortLbl.move(200, Y_POS)
         comPortLbl.setText('COM port:')
         comPortLbl.setFont(myFont)
 
         comPortTxt = QtGui.QLabel(self)
-        comPortTxt.move(280, 10)
+        comPortTxt.move(280, Y_POS)
         comPortTxt.setText('ttyACM0')
 
         # create quit button
         quitBtn = QtGui.QPushButton('Quit', self)
         quitBtn.clicked.connect(QtCore.QCoreApplication.instance().quit)
 
-        quitBtn.move(5, 5)
+        quitBtn.move(5, Y_POS)
         quitBtn.resize(50,40)
 
 
