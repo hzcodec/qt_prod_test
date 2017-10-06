@@ -10,7 +10,7 @@ class ProdTestMonitor(QtGui.QMainWindow):
         super(ProdTestMonitor, self).__init__()
 
         self.setGeometry(2030, 30, 500, 300)
-        self.setWindowTitle('ActSafe Production Test')
+        self.setWindowTitle('Production Test')
 
         extractAction = QtGui.QAction('&Quit', self)
         extractAction.setShortcut('Ctrl+Q')
