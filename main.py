@@ -3,27 +3,40 @@
 
 import sys
 from PyQt4 import QtGui
+from PyQt4 import QtCore
 
-class Example(QtGui.QWidget):
+class ProdTestMonitor(QtGui.QWidget):
     
     def __init__(self):
-        super(Example, self).__init__()
-        
+        super(ProdTestMonitor, self).__init__()
+        self.setGeometry(2030, 30, 500, 200)
+        self.setWindowTitle('Production Test')
+
         self.initUI()
         
     def initUI(self):
         
-        lbl1 = QtGui.QLabel('This is a very long text hula', self)
-        lbl1.move(15, 10)
+        comPortLbl = QtGui.QLabel('This is a very long text hula bandula shit', self)
+        comPortLbl.move(15, 10)
+
+        quitBtn = QtGui.QPushButton('Quit', self)
+        quitBtn.clicked.connect(self.close_application)
+        quitBtn.move(5, 55)
+        quitBtn.resize(50,40)
         
-        self.setGeometry(300, 300, 250, 150)
-        self.setWindowTitle('Absolute')    
-        #self.show()
-        
+    def close_application(self):
+        choice = QtGui.QMessageBox.question(self, 'Tired?', 'Do you want to quit?',
+                                            QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+
+        if choice == QtGui.QMessageBox.Yes:
+            sys.exit()
+        else:
+            pass
+
 def main():
     
     app = QtGui.QApplication(sys.argv)
-    frame = Example()
+    frame = ProdTestMonitor()
     frame.show()
     sys.exit(app.exec_())
 
