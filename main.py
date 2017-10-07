@@ -9,8 +9,14 @@ class ProdTestMonitor(QtGui.QWidget):
     
     def __init__(self):
         super(ProdTestMonitor, self).__init__()
-        self.setGeometry(2030, 30, 500, 200)
+
+        self.setGeometry(2030, 30, 500, 300)
         self.setWindowTitle('Production Test')
+
+        extractAction = QtGui.QAction('&Quit', self)
+        extractAction.setShortcut('Ctrl+Q')
+        extractAction.triggered.connect(self.close_application)
+        self.statusBar()
 
         self.initUI()
         
